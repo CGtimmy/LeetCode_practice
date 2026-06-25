@@ -1,0 +1,40 @@
+1. 2926ms 13.44MB
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        Answer = []
+        Mid = []
+        for i in range(len(nums)): #0 1 2
+            Check_list = 0
+            Check_list = target - nums[i]
+            for j in range(len(nums)):
+                if Check_list == nums[j]:
+                    if Check_list == (target // 2) and len(Mid) != 2:
+                        Mid.append(int(j))
+                    else:
+                        Answer.append(i)
+                        Answer.append(j)
+                        return(Answer)
+
+2. 0ms 13.16MB
+
+        Dict = {}
+        Minus = 0
+        for i in range(len(nums)):
+            Minus = target - nums[i]
+            if Minus in Dict:
+                return(Dict[Minus], i)
+
+            Dict[nums[i]] = i   
+                                                
+                    
+            
+                    
+                    
+                        
+
