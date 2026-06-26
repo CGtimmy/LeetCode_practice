@@ -1,0 +1,18 @@
+1. 19ms 26.42MB
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        Dict = {}
+        for i in range(len(nums)):
+            if nums[i] not in Dict:
+                Dict[nums[i]] = 1
+
+            else:
+                return True
+
+        return False   
+
