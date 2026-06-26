@@ -1,0 +1,21 @@
+python兩個迴圈會Timeout
+1. 43ms 19.45MB
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        More_prices = 0
+        Less_buy = 1000000
+        for i in range(len(prices)): 
+            if prices[i] < Less_buy:
+                Less_buy = prices[i]
+            else:
+                if prices[i] - Less_buy > More_prices:
+                    More_prices = prices[i] - Less_buy
+
+        return(More_prices)           
+                
+#把遇到的最低數字記起來 再把之後每一天去減這個最低數字 把最大的存起來
+        
