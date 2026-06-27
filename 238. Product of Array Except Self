@@ -1,0 +1,21 @@
+1. 73ms 22.67MB
+
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+            """
+        Left_list = [1]   #左邊乘
+        for i in range(1,len(nums), +1):
+            Left_list.append(nums[i - 1] * Left_list[i - 1])
+
+        Right_list = [1] #右邊乘
+        for i in range(len(nums) -1, 0, -1):
+            Right_list.append(nums[i] * Right_list[(len(nums) - i - 1)])
+
+        Answer_list = [] #兩邊乘起來
+        for i in range(len(Right_list)):
+            Answer_list.append(Left_list[i] * Right_list[len(Right_list) - i - 1])
+
+        return(Answer_list)    
