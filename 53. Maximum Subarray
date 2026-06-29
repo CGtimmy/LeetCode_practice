@@ -1,0 +1,21 @@
+1. 79ms 21.28MB
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        Cout = nums[0]
+        Max_num = nums[0]
+        for i in range(1, len(nums), +1):
+            if nums[i] + Cout >= nums[i]:
+                Cout += nums[i]
+                Max_num = max(Cout, Max_num)
+            else:
+                Cout = nums[i]
+                Max_num = max(Cout, Max_num)
+
+        return(Max_num)        
+
+
