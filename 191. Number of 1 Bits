@@ -1,0 +1,14 @@
+1. 0ms 12.49MB
+class Solution(object):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        Bin = bin(n)
+        cout = 0
+        for i in range(len(Bin)):
+            if Bin[i] == '1':
+                cout += 1
+        return(cout)       
+        
