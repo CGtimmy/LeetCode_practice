@@ -1,0 +1,16 @@
+1. 2227ms 13.33MB
+
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        Cout = []
+        for i in range(len(nums) + 1):
+            Cout.append(i)
+            if Cout[i] not in nums:
+                return(Cout[i])
+
+                
